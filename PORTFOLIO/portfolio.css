@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*:root HTML ka root element hota hai (equivalent to <html>), lekin zyada specificity deta hai.
+Iske andar hum CSS variables define karte hain — variables jinko hum poore CSS mein kahin bhi use kar sakte hain.*/
+:root{                                                                              
+    --bg-color:#000000;
+    --second-bg-color:#112e42;
+    --text-color:#ededed;
+    --main-color:#9a9a9a9f;
+}
+
+
+  /* overflow-x: hidden; Page ke horizontal scrollbar ko disable karta hai.
+Agar kisi element se content left/right se nikal raha ho (x-axis pe), wo cut ho jaayega, scroll nahi aayega*/
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;    
+    /*background-image: url('arun\ img.png');
+    /* background-size: cover;       poora area cover ho jaye */
+    /* background-position: center;  center me image rahe */
+    /* background-repeat: no-repeat; repeat na ho */
+    /* background-attachment: fixed; page scroll karne par fixed rahe */
+    
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;    
+}
+
+.logo{
+    font-weight: 600;
+    font-size: 2.5rem;
+    color:var(--text-color);   
+}
+
+.navbar a{
+    font-weight: 500;
+    margin-left: 3.5rem;
+    font-size: 1.7rem;
+    color: var(--text-color);
+}
+/*.navbar ke andar jo <a> links hover ya active (class="active") hon, unka color --main-color se change ho jaata hai.*/
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+}
+
+#menu-icon{
+    font-size: 3.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    display: none;
+}
+
+.section{
+    min-height: 100vh;
+    padding:10rem 9% 2rem;
+}
+/*meri details ko photo ke samne lane ke liye*/
+.home-content{
+   Display: flex;
+   Flex-direction: column;
+   margin-left: 10%;
+   height: 100vh;
+   justify-content: center;
+   max-width: 60rem;   
+    
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+    position: relative; 
+    width: 100%;
+}
+
+
+.home-content h1{
+    font-size:3.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 20rem;
+}
+
+.home-content .text-animate{
+    width: 18.8rem;
+    position: relative;
+}
+
+.home-content .text-animate h3{
+    font-size: 3.2rem;
+    width: 100vh;
+    -webkit-text-stroke: .7px var(--main-color);
+    color: transparent;
+}
+
+.home-content p{
+    font-size: 1.3rem;
+    margin: 2rem 0 4rem;
+}
+
+/*social Buttons ke liye*/
+.btn-box{
+    position: relative;
+    display: flex;
+    width: 34.5rem;
+    height: 5rem;
+    justify-content: space-between;
+}
+
+.btn-box .btn{
+    justify-content: center;
+    position: relative;
+    display:inline-flex ;
+    width: 15rem;
+    height: 100%;
+    background-color: var(--main-color);
+    align-items: center;
+    border: 2px solid var(--main-color);
+    border-radius: 2rem ;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box .btn:nth-child(2){
+    background: transparent;
+    color: var(--main-color);  
+      
+}
+
+.btn-box .btn:nth-child(2)::before{
+    background: var(--main-color);
+    
+}
+
+.btn-box .btn:nth-child(2):hover{
+    color: var(--bg-color);
+}
+
+.btn-box .btn::before{
+    content: " ";
+    position: absolute;
+    background-color:var(--bg-color);
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box .btn:hover:before{
+    width: 100%;
+}
+
+/*Home Icons */
+
+.social-icn {
+    position: relative;
+    bottom: 4rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;        
+    padding-bottom: 2rem; 
+    margin-top: 20rem;
+    align-items: center;
+}
+.social-icn a{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    height: 40px;
+    width: 40px;
+    background:transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;   
+    font-size: 30px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.social-icn a::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background:var(--main-color);
+    z-index: -1; 
+    transition: .5s;  
+}
+
+.social-icn a:hover:before{
+    width: 100%;
+}
+
+.social-icn a:hover{
+    color: var(--bg-color);
+
+}
+/* Main Image */
+ .main-img{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;      /* right half cover karega */
+  height: 100vh;   /* full height */
+  background: url('arun\ image.png') no-repeat center;
+  background-size: 100vh;
+  transition: 2s;
+  justify-content: center;
+}
+
+.main-img:hover{
+    opacity: .3;
+
+}
+
+
+
+ 
+
+
+
+
+
