@@ -4,4 +4,13 @@ Body{
   text-align: center;
   justify-content: center;
   border: 2px solid black;
+  text-decoration: none;
+}
+
+#task-list{
+  list-style: none;
+}
+
+#delBtn{
+  float: right;
 }
