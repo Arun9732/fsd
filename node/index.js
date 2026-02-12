@@ -2,7 +2,7 @@ const http = require("http");
 
 const myserver = http.createServer((req, res) => {
   if (req.url == "/") {
-    res.end("ABES ENGINEERING COLLEGE");
+    res.end(`<img src=""></img>`);
   } else if (req.url == "/about") {
     res.end("This is class of CSE");
   }else if (req.url == "/contact") {
