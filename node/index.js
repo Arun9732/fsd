@@ -38,4 +38,10 @@ fs.readFile("./cse.txt", "utf-8", (err, result) => {
 // const result=fs.readFileSync("./cse.txt","utf-8");
 // console.log(result);
 
-fs.appendFileSync("./cse.txt",' coder');
+
+// {appending}
+// fs.appendFileSync("./cse.txt",' coder');
+
+//{Creating new File}
+
+fs.cpSync("./cse.txt","./b.txt");
