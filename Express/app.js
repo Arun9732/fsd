@@ -1,6 +1,7 @@
 const express=require('express');
 const app=express();
 const port=3000;
+// app.used(express.json());
 
 // app.get("/",(req,res)=>{
 //   res.send("Arun");  
@@ -62,6 +63,23 @@ app.get('/read/:id',(req,res)=>{
 
 
 
+
+
+app.delete('/delete/:id',(req,res)=>{
+  const id=parseInt(req.params.id);
+  students=students.filter(s=>s.id!==id);
+  res.json({message:"data delete",data:students});
+})
+
+
+
 app.listen(port,()=>console.log("Server Started"))
+
+
+
+
+
+
+
 
 
